@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mermaid.js Hello World</title>
+    <script src="./mermaid.js"></script>
+  </head>
+  <body>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <h1>Gnome Business Plan</h1>
+    <div class="mermaid">
+      graph TD
+      A[Steal Underpants] -->|Secret Step| B
+      B[???] --> C
+      B --> D
+      C[Profit]
+      D[No Profit]
+    </div>
+
+    <h1>Elevator Diagram</h1>
+    <div class="mermaid">
+      stateDiagram
+      state "Floor 3" as F3
+      F3 --> F2: go down
+      F2 --> F3: go up
+      F2 --> F1: go down
+      F1 --> F2: go up
+      F1 --> F0: go down
+      F0 --> F1: go up
+    </div>
+
+    <h1>Delicious Pie Chart</h1>
+    <div class="mermaid">
+      pie
+      "Not Eaten" : 80
+      "Eaten" : 20
+    </div>
+
+    <h1>DH Key Exchange</h1>
+    <div class="mermaid">
+      sequenceDiagram
+      autonumber
+      note left of Alice: Group does not need to be secret
+      Alice ->> Bob: g, p
+      Alice ->> Alice: choose random a
+      Alice ->> Alice: A ≡ gᵃ (mod p)
+      Alice ->> Bob: A
+      Bob ->> Bob: choose random b
+      Bob ->> Bob: B ≡ gᵇ (mod p)
+      Bob ->> Alice: B
+      Bob ->> Bob: K ≡ Aᵇ ≡ gᵃᵇ (mod p)
+      Alice ->> Alice: K ≡ Bᵃ ≡ gᵃᵇ (mod p)
+      Alice -> Bob: Secure channel using K
+    </div>
+  </body>
+</html>
